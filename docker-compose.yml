@@ -1,0 +1,21 @@
+version: "3"
+services:
+  qbittorrent:
+    build:
+      context: ./
+    container_name: qbittorrent
+    environment:
+      - RUN_AS_USER=tang
+    volumes:
+      - /home/tang/downloads:/downloads
+      - /etc/passwd:/etc/passwd
+      - /etc/group:/etc/group
+      - /etc/shadow:/etc/shadow
+      - qbit-config:/qBittorrent
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+volumes:
+  qbit-config:
