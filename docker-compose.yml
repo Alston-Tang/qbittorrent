@@ -7,7 +7,7 @@ services:
     environment:
       - RUN_AS_USER=tang
     volumes:
-      - /home/tang/downloads:/downloads
+      - /mnt/main/download:/downloads
       - /etc/passwd:/etc/passwd
       - /etc/group:/etc/group
       - /etc/shadow:/etc/shadow
