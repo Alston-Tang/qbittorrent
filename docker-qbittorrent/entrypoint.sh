@@ -16,7 +16,11 @@ then
 fi
 
 if [ -z "${RUN_AS_USER}" ]; then
-	"$@"
-else
-	setpriv --reuid "${RUN_AS_USER}" "$@"
+	RUN_AS_USER = "root"
 fi
+if [ -z "${RUN_AS_GROUP}" ]; then
+	RUN_AS_GROUP = "root"
+fi
+
+setpriv --reuid "${RUN_AS_USER}" --regid "${RUN_AS_GROUP}" "$@"
+

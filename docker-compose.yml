@@ -6,6 +6,7 @@ services:
     container_name: qbittorrent
     environment:
       - RUN_AS_USER=tang
+      - RUN_AS_GROUP=tang
     volumes:
       - /mnt/main/download:/downloads
       - /etc/passwd:/etc/passwd
