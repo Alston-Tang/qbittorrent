@@ -15,8 +15,8 @@ services:
       - qbit-config:/qBittorrent
     ports:
       - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
+      - 25912:25912
+      - 25912:25912/udp
     restart: unless-stopped
 volumes:
   qbit-config:
